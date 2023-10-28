@@ -1,0 +1,30 @@
+{% load static %}
+<html>
+    <head>
+        <title></title>
+        <style>
+            body
+            {
+                background-image: url("{% static 'Predict2.jpg' %}");
+                background-size: 1600px 750px;
+                background-repeat: no-repeat;
+            }
+        </style>
+    </head>
+    <body>
+        <nav align="right" class="navbar navbar-inverse" style="margin-top: 70px; margin-right: 80px;">
+            <div class="nav navbar-nav navbar-right" style="font-size: 25px;">
+                <a href="{% url 'home' %}" style="color: black; text-decoration: none; margin-left: 7px; margin-right: 7px;">Home</a>
+                <a href="https://docs.google.com/presentation/d/1W3xJhH2Ayy9fSXvQfCxIvYt-57xK9jFT/edit#slide=id.p1" style="color: black; text-decoration: none; margin-left: 7px; margin-right: 7px;">About us</a>
+                <a href="{% url 'graph' %}" style="color: black; text-decoration: none; margin-left: 7px; margin-right: 7px;">Graph</a>
+            </div>
+       </nav>
+        <div align="center" class="container" style="margin-top: 80px;">
+            <h2 style="font-size: 45px;">Prediction</h2>
+            <h3 style="font-size: 30px;">Gold Price : {{prediction}}</h3>
+            <p style="font-size: 20px;">MSE Score: {{ mse_score }}</p>
+            <a href="{% url 'home' %}">Back to Home</a>
+        </div>
+    </body>
+</html>
+
